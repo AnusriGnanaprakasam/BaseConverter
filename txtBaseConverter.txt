@@ -1,0 +1,41 @@
+1.#Common Mistake #7: Creating circular module
+https://www.toptal.com/python/top-10-mistakes-that-python-programmers-make
+ERROR:
+File "C:\Users\Anusri\PycharmProjects\BaseConverter\BaseConvertermain.py", line 1, in <module>
+    import Base_converter_functions
+  File "C:\Users\Anusri\PycharmProjects\BaseConverter\Base_converter_functions.py", line 1, in <module>
+    import BaseConvertermain
+  File "C:\Users\Anusri\PycharmProjects\BaseConverter\BaseConvertermain.py", line 22, in <module>
+    Base_converter_functions.BaseTwo(numtoconvert)
+AttributeError: partially initialized module 'Base_converter_functions' has no attribute 'BaseTwo' (most likely due to a circular import)
+
+#Common Mistake #7: Creating circular module
+'''I was importing '''
+i was importing both files for each other
+first one imported second and second imported the first
+this is bad
+
+#did not recognize basetwofunction because of variable in the other file?
+
+The answer is that the mere presence of a circular import is not in and of itself a problem in Python. If a module
+has already been imported, Python is smart enough not to try to re-import it.
+However, depending on the point at which each module is attempting to access functions or variables defined in the other,
+you may indeed run into problems.
+
+
+IMPORTANT QUESTIONS:
+- HOW ARE MODULES INITIALIZED? Looking at how python works what is called and taken into consideration next
+- trouble with none type when trying to assign the result of a function to a var
+UPDATES:
+- I am just going to put the program in one file
+
+
+FINAL:
+- I made a base converter
+- it works
+- it is a small first project
+- I might try to make two separate files when i want to add more stuff to it
+-What should i do next?
+ - Create a UI for this
+
+
